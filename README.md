@@ -22,3 +22,4 @@ Muestra un detalle de los productos que ha ido agregando el cliente, en caso de 
 
 ### Venta
 para la venta se muestra los productos agegados del carro y su total a pagar, luego genera un codigo de venta alfanumrico para acercarse a caja para pagar, finalmente, limpia el carro para continuar con otra venta.
+
