@@ -1,6 +1,6 @@
 # PRE-ENTREGA 2 Elizabeth Arriagada
 
-## CODERHAUSE
+## CODERHOUSE
 
 El archivo 'index.js' posee el algoritmo con funciones para desplegar una version inicial de vany ventas
 
