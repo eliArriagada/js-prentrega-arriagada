@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script src="https://kit.fontawesome.com/1c7d08c196.js" crossorigin="anonymous"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="../assets/js/data.js"></script>
+</head>
+
+<body>
+  <!--Nav web-->
+  <nav class="navbar sticky-top navbar-light bg-light justify-content-between">
+    <a href="../index.html" class="navbar-brand">
+      <h1 class="navbar-web logo mx-1">
+        <img class="icono-logo" src="../assets/imgs/logo.png" alt="" srcset="" />
+        Vany Ventas
+      </h1>
+    </a>
+
+    <form class="d-flex text-center align-items-center">
+      <input class="form-control me-2" type="search" placeholder="Buscar:" aria-label="Search" />
+      <button class="btn btn-outline-primary" type="submit">Buscar</button>
+      &nbsp;&nbsp;&nbsp;
+      <a class="" href="carro.html">
+        <i class="fas fa-shopping-cart"></i> <label class="carro" for=""></label>
+      </a>
+    </form>
+  </nav>
+  <!--Nav mobile-->
+  <nav class="navbar fixed-top navbar-mobile bg-primary navbar-expand-lg" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="carro.html"><i class="fas fa-shopping-cart"></i><label class="carro"
+          for=""></label></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <!--Top Ventas-->
+      <section id="ventas">
+        <div class="row text-center align-items-center py-5">
+          <div class="col">
+            <hr class="border border-primary border-3 opacity-75" />
+          </div>
+          <div class="col">
+            <h2 class="">Carro de compra</h2>
+          </div>
+          <div class="col">
+            <hr class="border border-primary border-3 opacity-75" />
+          </div>
+        </div>
+        <div>
+          <div id="carroVacio" class="row carro-vacio text-center align-items-center">
+            <div class="col-12">
+              Lo sentimos aun no ha agregado nada al carro.
+            </div>
+            <div class="col-12">
+              <a href="../index.html" class="btn btn-secondary">Volver al home</a>
+            </div>
+          </div>
+          <div class="row row-cols-md-2 row-cols-sm-1 carro-productos p-5">
+            <div class="col">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col ">Precio unidad</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody id="tablaDatos">
+
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td>Envio:</td>
+                    <td>$
+                      <span id="valorEnvio"></span></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td>Total</td>
+                    <td>
+                      <h5 class="titulo-producto" for="">$
+                        <span id="valorTotalPedido"></span>
+                      </h5>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col-12">
+                  <h3>Ingrese direcion de envio</h3>
+                </div>
+                <div class="col">
+                  <form>
+                    <div class="form-group py-3">
+                      <label for="region">Región:</label>
+                      <select class="form-control" id="region">
+                        <option value="">Seleccionar</option>
+                        <option value="RM">Región Metropolitana</option>
+                        <option value="I">Tarapacá</option>
+                        <option value="II">Antofagasta</option>
+                        <option value="III">Atacama</option>
+                        <!-- Agrega aquí el resto de las regiones -->
+                      </select>
+                    </div>
+                    <div class="form-group py-3">
+                      <label for="comuna">Comuna:</label>
+                      <select class="form-control" id="comuna">
+                        <option value="">Seleccionar</option>
+                        <!-- Aquí deberás ingresar las comunas correspondientes a cada región -->
+                      </select>
+                    </div>
+                    <div class="form-group py-3">
+                      <label for="direccion">Dirección:</label>
+                      <input type="text" class="form-control" id="direccion" placeholder="Ingresa tu dirección" />
+                    </div>
+                    <div class="form-group py-3">
+                      <label for="numeracion">Numeración:</label>
+                      <input type="text" class="form-control" id="numeracion" placeholder="Ingresa el número" />
+                    </div>
+                    <div class="form-group py-3">
+                      <label for="info-adicional">Información Adicional:</label>
+                      <textarea class="form-control" id="info-adicional"
+                        placeholder="Ingresa información adicional"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                      Confirmar
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row py-3 text-right text-end carro-productos">
+            <div class="col-6 col-sm-12 py-3">
+              <button type="button" class="btn btn-primary">Pagar</button>
+            </div>
+            <div class="col-6 col-sm-12"></div>
+            <div class="col-6 col-sm-12">
+              <a href="../index.html" class="btn btn-secondary">Volver al home</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!--Footer-->
+  <footer class="text-center text-lg-start">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">
+            <a href="contacto.html"> Contacto </a>
+          </h5>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
+            atque ea quis molestias. Fugiat pariatur maxime quis culpa
+            corporis vitae repudiandae aliquam voluptatem veniam, est atque
+            cumque eum delectus sint!
+          </p>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Comunas de envio</h5>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
+            atque ea quis molestias. Fugiat pariatur maxime quis culpa
+            corporis vitae repudiandae aliquam voluptatem veniam, est atque
+            cumque eum delectus sint!
+          </p>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2020 Copyright:
+      <a class="text-dark" href="https://Vany Ventas.cl/">Vany Ventas.cl</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  </script>
+  <script src="../assets/js/carro.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+$primary: #9e5668 !default;
+$secondary: #efd0dc !default;
+$success: #b36f41 !default;
+$light: white;
+$carousel-control-color: $primary;
+$grid-breakpoints: (xs: 0,
+    sm: 376px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px) !default;
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.icono-logo {
+    width: 4rem;
+    border-radius: 50%;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+}
+
+#productos,
+#temporadas,
+#ventas {
+
+    & .card img {
+        height: 20rem;
+    }
+}
+
+td {
+    min-width: 6rem;
+}
+
+$layout-breakpoint-small: 992px;
+
+.first-element-web {
+    margin-top: 8.5rem;
+}
+
+.home-element-web {
+    margin-top: 3rem;
+}
+
+
+.navbar-web {
+    display: block;
+}
+
+.navbar-mobile {
+    display: none;
+}
+
+.nav-link.active {
+    color: $primary !important;
+
+    border-bottom: solid 3px $primary;
+}
+
+.line {
+    width: 200px;
+    color: $primary !important;
+    border-bottom: solid 3px $primary;
+}
+
+.logo {
+    color: $primary;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.logo {
+    font-family: 'Dancing Script',
+        cursive;
+}
+
+.imgnormalizada img {
+    width: auto;
+    height: 425px;
+    max-height: 425px;
+}
+
+.fa-minus-circle:hover {
+    color: $primary;
+}
+
+.precio {
+    color: $primary !important;
+}
+
+.col .card {
+    &:hover {
+        width: 102%;
+        height: 102%;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+    }
+
+
+}
+
+.testimonial-card .card-up {
+    height: 120px;
+    overflow: hidden;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.btn-circle {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+}
+
+
+.carro-vacio {
+    height: 10rem;
+
+}
+
+.imagen-carro {
+    width: 8rem;
+}
+
+.titulo-producto {
+    color: $primary;
+    font-family: 'Dancing Script'
+}
+
+.testimonial-card .avatar {
+    width: 110px;
+    margin-top: -60px;
+    overflow: hidden;
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
+
+footer {
+    background-color: $gray-300 !important;
+}
+
+.card-testimonio-1 {
+    background-color: $primary;
+}
+
+.card-testimonio-2 {
+    background-color: $secondary;
+}
+
+.card-testimonio-3 {
+    background-color: $success;
+}
+
+.details-image {
+    width: 100%;
+    max-width: 30rem;
+}
+
+.img-thumbnail {
+    width: auto;
+    height: 525px;
+    max-height: 525px;
+}
+
+@media (max-width: $layout-breakpoint-small) {
+
+    .nav-link.active {
+        color: $secondary !important;
+
+        border-bottom: solid 3px $secondary;
+    }
+
+    .navbar-web {
+        display: none;
+    }
+
+    .navbar-mobile {
+        display: block;
+    }
+
+    .logo {
+        font-size: 4rem;
+    }
+
+    .imgnormalizada img {
+        width: auto;
+        height: 225px;
+        max-height: 225px;
+    }
+
+    .first-element-web {
+        margin-top: 0rem;
+    }
+
+    .home-element-web {
+        margin-top: 1rem;
+    }
+}
