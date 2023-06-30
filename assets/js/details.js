@@ -69,7 +69,7 @@ function funcionAgregar() {
     actualizarCarro()
     Swal.fire(
         'Se ha agregado exitosamente',
-        `El producto <b>${producto.nombre}</b> se ha agregado exitosamente al carro.`,
+        `El producto <b>${producto.nombre}</b> Se ha agregado exitosamente al carro.`,
         'success'
       )
     cantidad.innerHTML = 1

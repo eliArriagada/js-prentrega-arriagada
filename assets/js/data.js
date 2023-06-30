@@ -74,9 +74,9 @@ const nuevoProductos = [
 ]
 
 const campanias = [
-    new Campania("dia-mama", "Dia de la mama", productosDiaMama, false),
-    new Campania("dia-papa", "Dia del papa", productosDiaPapa, true),
-    new Campania("aniversario", "Nuestro Aniversario", productosAniversario, false),
+    new Campania("dia-mama", "Dia de la mamá", productosDiaMama, true),
+    new Campania("dia-papa", "Dia del papá", productosDiaPapa, false),
+    new Campania("aniversario", "Nuestro Aniversario", productosAniversario, true),
     new Campania("nuevos-productos", "Nuevos productos", nuevoProductos, false),
 ]
 

@@ -14,8 +14,8 @@ const eventoRedirigir = timer => {
 eventoRedirigir(10000)
 .then(()=>
     Swal.fire({
-        title: 'Va ser redirigido al home?',
-        text:'recuerde que su orden fue enviada a su correo',
+        title: 'Va a ser redirigido al home.',
+        text:'Recuerde que su orden fue enviada a su correo',
         showDenyButton: false,
         showCancelButton: false,
         showConfirmButton:true,
