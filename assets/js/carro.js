@@ -53,7 +53,7 @@ function confirmarDireccion(){
     
    if(comuna.value==''){
     Swal.fire({
-        title: 'Error al guardar la direccion',
+        title: 'Error al guardar la dirección',
         text: `No ha seleccionado una comuna.`,
         icon: 'error',
       })
@@ -69,7 +69,7 @@ function confirmarDireccion(){
     }
 
     Swal.fire({
-        title: 'Se ha agregado la direccion',
+        title: 'Se ha agregado la dirección',
         text: `El envio calculado es de $${envio}.`,
         icon: 'success',
       })
@@ -123,16 +123,16 @@ botonPagar.addEventListener("click", respuestaBotonPagar)
 function respuestaBotonPagar() {
     if(direccion.value==''){
         Swal.fire({
-            title: 'Debe agregar una direccion',
-            text: `Se debe hacer el calculo de envio.`,
+            title: 'Debe agregar una dirección',
+            text: `Se debe hacer el calculo de envío.`,
             icon: 'error',
           })
         return;
        }
 
     Swal.fire({
-        title: 'Esta seguro que desea pagar?',
-        text: `Se generara una orden de compra por el monto ${valorTotalPedido.innerHTML}.`,
+        title: '¿Esta seguro que desea pagar?',
+        text: `Se generará una orden de compra por el monto ${valorTotalPedido.innerHTML}.`,
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
