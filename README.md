@@ -1,11 +1,8 @@
-# PRE-ENTREGA 3 Elizabeth Arriagada
+# ENTREGA  Elizabeth Arriagada
 
 ## CODERHOUSE
 
-El archivo 'index.js' posee el algoritmo con funciones para desplegar una version inicial de vany ventas
-
-se agrega capa web de chocolateria vaniventas
-
+Se entrega aplicacion vani ventas con html y js
 
 ### INICIO
 la pagina de home esta hecho con boostrap y sass, incluyendo una capa de datos con js y su popio archivo con logica con DOM para mostrar los productos relacionado

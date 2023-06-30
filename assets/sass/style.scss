@@ -4,7 +4,7 @@ $success: #b36f41 !default;
 $light: white;
 $carousel-control-color: $primary;
 $grid-breakpoints: (xs: 0,
-    sm: 376px,
+    sm: 300px,
     md: 768px,
     lg: 992px,
     xl: 1200px,
@@ -36,6 +36,7 @@ td {
 }
 
 $layout-breakpoint-small: 992px;
+$layout-breakpoint-xsmall: 300px;
 
 .first-element-web {
     margin-top: 8.5rem;
@@ -172,7 +173,10 @@ footer {
     max-height: 525px;
 }
 
-@media (max-width: $layout-breakpoint-small) {
+
+
+
+@media only screen and (max-width: $layout-breakpoint-small) and (min-width: $layout-breakpoint-xsmall){
 
     .nav-link.active {
         color: $secondary !important;
@@ -204,5 +208,11 @@ footer {
 
     .home-element-web {
         margin-top: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo {
+        font-size: 3rem;
     }
 }
