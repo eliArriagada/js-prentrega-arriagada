@@ -5,9 +5,79 @@ let carroProductos = document.getElementsByClassName("carro-productos");
 let tablaDatos = document.getElementById("tablaDatos");
 let valorEnvio = document.getElementById("valorEnvio");
 let valorTotalPedido = document.getElementById("valorTotalPedido");
+let botonPagar = document.getElementById("botonPagar");
+let confirmacion = document.getElementById("confirmacion");
+let region = document.getElementById("region");
+let comuna = document.getElementById("comuna");
+let direccion = document.getElementById("direccion");
+let numeracion = document.getElementById("numeracion");
+let infoAdicional = document.getElementById("info-adicional");
+let botonConfirmarDireccion = document.getElementById("botonConfirmarDireccion");
 
-const envio = 5000;
+
+let envio = 0;
 valorEnvio.innerHTML = envio;
+
+ fetch('https://api.pktuno.cl/Api/Cobertura/Regiones')
+.then(response=>response.json())
+.then(response=>poblarRegion(response))
+
+
+function poblarRegion(regiones){
+    regiones.forEach(r => {
+        region.innerHTML += `<option value="${r.clave}">${r.region}</option>`
+
+    });
+
+}
+const actualizarComuna = async () => {
+    await fetch(`https://api.pktuno.cl/Api/Cobertura/Comunas/${region.value}`)
+    .then(response=>response.json())
+    .then(response=>poblarComunas(response))
+  }
+region.addEventListener('change',actualizarComuna)
+
+
+function poblarComunas(comunas){
+
+    comuna.innerHTML = `<option value="">Seleccionar</option>`
+    comunas.forEach(c => {
+        comuna.innerHTML += `<option value="${c.clave}">${c.comuna}</option>`
+
+    });
+
+}
+
+botonConfirmarDireccion.addEventListener('click',confirmarDireccion)
+function confirmarDireccion(){
+    
+   if(comuna.value==''){
+    Swal.fire({
+        title: 'Error al guardar la direccion',
+        text: `No ha seleccionado una comuna.`,
+        icon: 'error',
+      })
+    return;
+   }
+    envio = Math.floor(parseInt(comuna.value)/10)
+500,8
+
+    if(region.value=='RM'){
+        envio = Math.floor(envio)
+    }else{
+        envio = Math.floor(envio*10)
+    }
+
+    Swal.fire({
+        title: 'Se ha agregado la direccion',
+        text: `El envio calculado es de $${envio}.`,
+        icon: 'success',
+      })
+
+    valorEnvio.innerHTML = envio
+    poblarTabla()
+}
+
 
 
 poblarTabla();
@@ -45,6 +115,40 @@ function poblarTabla() {
         }
     }
 
+}
+
+
+botonPagar.addEventListener("click", respuestaBotonPagar)
+
+function respuestaBotonPagar() {
+    if(direccion.value==''){
+        Swal.fire({
+            title: 'Debe agregar una direccion',
+            text: `Se debe hacer el calculo de envio.`,
+            icon: 'error',
+          })
+        return;
+       }
+
+    Swal.fire({
+        title: 'Esta seguro que desea pagar?',
+        text: `Se generara una orden de compra por el monto ${valorTotalPedido.innerHTML}.`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si deseo comprar!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            confirmacion.click()
+            limpiarCarro()
+        }
+      })
+}
+
+function limpiarCarro(){
+    carroCompra = [];
+    localStorage.setItem("carroCompra", JSON.stringify(carroCompra));
 }
 
 function crearHtmlLista(producto, carroProducto, totalProducto, indexProducto) {

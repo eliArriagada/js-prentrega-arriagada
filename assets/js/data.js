@@ -82,7 +82,7 @@ const campanias = [
 
 
 const testimonios = [
-    new Testimonio("María", "No puedo resistirme a los chocolates y los alfajores de vany ventas! Cada bocado es una explosión de sabores deliciosos. Los alfajores tienen la combinación perfecta de manjar y chocolate", "/assets/imgs/avatar 1.png", "card-testimonio-1"),
-    new Testimonio("Ana", "Las bombas de chocolate y los alfajores son simplemente espectaculares. La calidad del chocolate es excepcional, se nota que utilizan ingredientes de primera. Cada bombón es una pequeña obra de arte, y los alfajores son tan tiernos y llenos de sabor.", "/assets/imgs/avatar 2.png", "card-testimonio-2"),
-    new Testimonio("Juan", "Siempre encuentro variedades sorprendentes de sabores y combinaciones únicas. Los bombones son tan delicados y exquisitos, y los alfajores son una delicia irresistible. ¡No puedo recomendar esta chocolatería lo suficiente! Si eres amante del chocolate, definitivamente debes probar sus creaciones.", "/assets/imgs/avatar 3.png", "card-testimonio-3"),
+    new Testimonio("María", "No puedo resistirme a los chocolates y los alfajores de vany ventas! Cada bocado es una explosión de sabores deliciosos. Los alfajores tienen la combinación perfecta de manjar y chocolate", "assets/imgs/avatar 1.png", "card-testimonio-1"),
+    new Testimonio("Ana", "Las bombas de chocolate y los alfajores son simplemente espectaculares. La calidad del chocolate es excepcional, se nota que utilizan ingredientes de primera. Cada bombón es una pequeña obra de arte, y los alfajores son tan tiernos y llenos de sabor.", "assets/imgs/avatar 2.png", "card-testimonio-2"),
+    new Testimonio("Juan", "Siempre encuentro variedades sorprendentes de sabores y combinaciones únicas. Los bombones son tan delicados y exquisitos, y los alfajores son una delicia irresistible. ¡No puedo recomendar esta chocolatería lo suficiente! Si eres amante del chocolate, definitivamente debes probar sus creaciones.", "assets/imgs/avatar 3.png", "card-testimonio-3"),
 ]

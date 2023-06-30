@@ -1,3 +1,4 @@
+
 let home = document.getElementById("home")
 let idSeleccionado = localStorage.getItem("productoSeleccionado")
 let carroCompra = JSON.parse(localStorage.getItem("carroCompra"))
@@ -66,8 +67,11 @@ function funcionAgregar() {
     carroCompra.push(new ProductoCarro(idSeleccionado, cantidad.innerHTML, pedidoEspecial.value))
     localStorage.setItem("carroCompra", JSON.stringify(carroCompra))
     actualizarCarro()
-    alert('El producto fue agregado al carro.', 'info')
-
+    Swal.fire(
+        'Se ha agregado exitosamente',
+        `El producto <b>${producto.nombre}</b> se ha agregado exitosamente al carro.`,
+        'success'
+      )
     cantidad.innerHTML = 1
     pedidoEspecial.value = ""
 
@@ -81,20 +85,6 @@ function imagenHtmlProducto(url) {
     class="details-image rounded mx-auto d-block"
     alt="..."
   />`
-}
-
-
-function alert(message, type) {
-    let wrapper = document.createElement('div')
-    wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
-
-    alertPlaceholder.append(wrapper)
-
-    setTimeout(function () {
-            wrapper.innerHTML = ""
-        },
-        5000)
-
 }
 
 
